@@ -4,7 +4,7 @@ import 'package:nasr_city_hosptial_app/presentation/views/medicinesView.dart';
 import 'package:page_animation_transition/animations/right_to_left_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
-import '../../../../core/app_configuration/assets.dart';
+import '../../../../core/ALL_DATA.dart';
 import '../../aboutUsView.dart';
 import '../../branchesView.dart';
 import '../../complaintsVIew.dart';
@@ -14,46 +14,38 @@ import '../../servicesView.dart';
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});
 
-  static final List<String> _categoriesImages = [
-    Images.service,
-    Images.info,
-    Images.medicine,
-    Images.branch,
-    Images.news,
-    Images.support
-  ];
-  static final List<String> _categoriesTitle = [
-    'خدماتنا',
-    'عن المستشفي',
-    'طلب ادوية',
-    'فروعنا',
-    'اخبارنا',
-    'للشكاوي',
-  ];
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Expanded(
+      child: Padding(
+        padding:  EdgeInsets.only(top: 30.h),
         child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return ListTile(
-                leading: Image.asset(_categoriesImages[index],height: 40.h,),
-                title: Text(_categoriesTitle[index]),
+                leading: Image.asset(
+                  categoriesImages[index],
+                  height: 40.h,
+                ),
+                title: Text(categoriesTitle[index]),
                 onTap: () {
                   // Navigate to home screen or perform desired action
                   NavigateTo(index, context);
                 },
-                trailing:  Icon(Icons.arrow_back_ios_new,size: 20.r,),
+                trailing: Icon(
+                  Icons.arrow_back_ios_new,
+                  size: 20.r,
+                ),
               );
             },
             separatorBuilder: (context, index) => SizedBox(
                   height: 25.h,
                 ),
-            itemCount: _categoriesTitle.length),
+            itemCount: categoriesTitle.length),
       ),
     );
   }
+
   void NavigateTo(int index, BuildContext context) {
     switch (index) {
       case 0:

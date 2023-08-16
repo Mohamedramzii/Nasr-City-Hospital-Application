@@ -21,22 +21,22 @@ class HomeView extends StatelessWidget {
     Images.image2,
   ];
 
-  final List<String> _categoriesImages = [
-    Images.service,
-    Images.info,
-    Images.medicine,
-    Images.branch,
-    Images.news,
-    Images.support
-  ];
-  final List<String> _categoriesTitle = [
-    'خدماتنا',
-    'عن المستشفي',
-    'طلب ادوية',
-    'فروعنا',
-    'اخبارنا',
-    'للشكاوي',
-  ];
+ final List<String> _categoriesImages = [
+  Images.service,
+  Images.info,
+  Images.medicine,
+  Images.branch,
+  Images.news,
+  Images.support
+];
+final List<String> _categoriesTitle = [
+  'خدماتنا',
+  'عن المستشفي',
+  'طلب ادوية',
+  'فروعنا',
+  'اخبارنا',
+  'للشكاوي',
+];
   @override
   Widget build(BuildContext context) {
     return Directionality(

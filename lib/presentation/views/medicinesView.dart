@@ -55,7 +55,8 @@ class MedicinesView extends StatelessWidget {
                 style: FontsManager.textblack15,
               ),
             ),
-            const Spacer(),
+            // const Spacer(),
+            SizedBox(height: 40.h,),
             CustomButton(
                 text: 'اطلب الدواء',
                 onpressed: () async {
