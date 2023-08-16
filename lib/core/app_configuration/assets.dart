@@ -12,6 +12,7 @@ abstract class Images {
   static const String googlemaps = 'assets/images/google-maps.png';
   static const String location = 'assets/images/location.json';
   static const String capture = 'assets/images/capture.json';
+  static const String supportjson = 'assets/images/support.json';
 
   static const String pic1='assets/images/services/1.jpeg';
   static const String pic2='assets/images/services/2.jpeg';

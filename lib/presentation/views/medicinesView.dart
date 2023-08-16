@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import 'package:nasr_city_hosptial_app/core/app_configuration/colors.dart';
 import 'package:nasr_city_hosptial_app/core/app_configuration/fonts.dart';
+import 'package:nasr_city_hosptial_app/core/common_widgets/custom_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/app_configuration/assets.dart';
@@ -10,7 +10,7 @@ import '../../core/app_configuration/assets.dart';
 class MedicinesView extends StatelessWidget {
   const MedicinesView({super.key});
 
-  Future<void> openWhatsAppWithImage() async {
+  Future<void> openWhatsApp() async {
     const String phoneNumber = '201206000811';
     final url =
         'https://wa.me/$phoneNumber?text=${Uri.encodeFull('من فضلك عاوز اطلب دواء..لحظة هصور الروشتة')}';
@@ -22,7 +22,6 @@ class MedicinesView extends StatelessWidget {
         mode: LaunchMode.externalApplication,
       );
     } else {
-
       //! Should handle that error
       throw 'Could not launch WhatsApp.';
     }
@@ -36,8 +35,8 @@ class MedicinesView extends StatelessWidget {
         appBar: AppBar(
           title: const Text('لطلب الادوية'),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             LottieBuilder.asset(
               Images.capture,
@@ -57,21 +56,11 @@ class MedicinesView extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Center(
-              child: MaterialButton(
-                onPressed: () async {
-                  await openWhatsAppWithImage();
-                },
-                minWidth: 200.w,
-                height: 40.h,
-                shape: const StadiumBorder(),
-                color: ColorsManager.kprimaryColor,
-                child: Text(
-                  'أطلب الدواء',
-                  style: FontsManager.textblack15,
-                ),
-              ),
-            ),
+            CustomButton(
+                text: 'اطلب الدواء',
+                onpressed: () async {
+                  await openWhatsApp();
+                }),
             SizedBox(
               height: 80.h,
             )

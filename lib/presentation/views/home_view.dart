@@ -8,6 +8,7 @@ import 'package:nasr_city_hosptial_app/presentation/views/complaintsVIew.dart';
 import 'package:nasr_city_hosptial_app/presentation/views/medicinesView.dart';
 import 'package:nasr_city_hosptial_app/presentation/views/newsView.dart';
 import 'package:nasr_city_hosptial_app/presentation/views/servicesView.dart';
+import 'package:nasr_city_hosptial_app/presentation/views/widgets/home_widgets/drawer_widget.dart';
 import 'package:page_animation_transition/animations/right_to_left_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
@@ -44,6 +45,7 @@ class HomeView extends StatelessWidget {
           appBar: AppBar(
             title: const Text('الرئيسية'),
           ),
+          drawer: const DrawerWidget(),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -72,6 +74,7 @@ class HomeView extends StatelessWidget {
                   child: SizedBox(
                     height: 340.h,
                     child: GridView.builder(
+                      physics: const BouncingScrollPhysics(),
                       itemCount: _categoriesImages.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(

@@ -58,7 +58,8 @@ class BranchesView extends StatelessWidget {
                     height: 15.h,
                   ),
                   SizedBox(
-                    height: 500.h,
+                    //!------
+                    height: 550.h,
                     child: ListView.separated(
                         physics: const BouncingScrollPhysics(),
                         // shrinkWrap: true,

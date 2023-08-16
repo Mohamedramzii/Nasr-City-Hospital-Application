@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nasr_city_hosptial_app/core/app_configuration/colors.dart';
 import 'package:nasr_city_hosptial_app/presentation/views/splashView.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
               appBarTheme: AppBarTheme(
-                elevation: 0,
+                  elevation: 0,
                   centerTitle: true,
                   backgroundColor: ColorsManager.kprimaryColor)),
           home: const SplashView()),

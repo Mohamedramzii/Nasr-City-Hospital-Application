@@ -53,19 +53,20 @@ class GoogleLocationWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: double.infinity,
-              height: 40.h,
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10.r),
-                    topRight: Radius.circular(10.r)),
-                color: ColorsManager.kprimaryColor,
-              ),
-              child: Text(
-                brancheName,
-                style: FontsManager.textblack20,
+            Flexible(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(8.r),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10.r),
+                      topRight: Radius.circular(10.r)),
+                  color: ColorsManager.kprimaryColor,
+                ),
+                child: Text(
+                  brancheName,
+                  style: FontsManager.textblack20,
+                ),
               ),
             ),
             // SizedBox(
